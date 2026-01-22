@@ -1,10 +1,4 @@
-import { Datapack, writeDatapack } from "mc-datapack-compiler"
-import { FunctionContext } from "mc-datapack-compiler/dist/frontend/context";
-import { Objective } from "mc-datapack-compiler/dist/frontend/objective";
-import { Score } from "mc-datapack-compiler/dist/frontend/score";
-import { TellrawText } from "mc-datapack-compiler/dist/frontend/tellraw";
-import { Text } from "mc-datapack-compiler/dist/frontend/text";
-
+import {Datapack, Score, Objective, TellrawText, Text, FunctionContext} from "mc-datapack-compiler"
 const dp = new Datapack("example");
 
 const main = dp.createFunction("main");
@@ -19,20 +13,19 @@ main((ctx) => {
     // Runtime scoreboard
     const var1 = new Objective("var1");
     ctx.scoreInit(var1);
-    let score = new Score(var1, "temp1", 42);
+    const score = new Score(var1, "temp1", 42);
     // ctx.scoreSet(score);
 
     const text = new TellrawText(
         new Text(`Text Hello World, the scoreboard ${var1.getName()} is, `)
             .setBold(true)
             .setColor("blue")
-    )
+        )
         .append(score)
         .append(new Text("!, "))
     // .append(score)
 
     ctx.tellraw("@a", text);
-
 
     for (let i = 0; i < 5; i++) {
         ctx.say("Loop " + i);
@@ -64,7 +57,8 @@ test2((ctx) => {
 });
 
 // visualizeDatapack(dp);
-writeDatapack(dp, "./out/example_datapack");
+
+dp.writeDatapack("./out/example_datapack");
 
 function newFunction_1(ctx: FunctionContext) {
     newFunction();
