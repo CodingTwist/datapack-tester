@@ -1,10 +1,12 @@
-import { SayNode, TellrawText, Text } from "mc-datapack-compiler";
+import * as fs from "fs";
+import * as path from "path";
+import { RandomValueNode, TellrawText, Text, click, hover } from "mc-datapack-compiler";
 import { dataPack } from "./datapack";
-import { click } from "mc-datapack-compiler/dist/core/frontend/nodes/click";
 
 export interface TriviaAnswer {
   text: string;
   color?: string;
+  correct: boolean;
 }
 
 export interface TriviaQuestion {
@@ -13,57 +15,87 @@ export interface TriviaQuestion {
   answers: TriviaAnswer[];
 }
 
-export const question = dataPack.createFunction("question");
+const correct = dataPack.createFunction("correct");
+correct.build((ctx) => {
+  ctx.tellraw("@a", buildCorrectMessage());
+});
+
+const incorrect = dataPack.createFunction("incorrect");
+incorrect.build((ctx) => {
+  ctx.tellraw("@a", buildIncorrectMessage());
+});
+
+const questions: TriviaQuestion[] = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, "../questions.json"), "utf-8"),
+);
 
 function buildQuestionMessage(q: TriviaQuestion): TellrawText {
   const parts: Text[] = [];
-  parts.push(new Text(""));
 
   if (q.prefix) {
     parts.push(new Text(`${q.prefix} `).setColor("gold"));
   }
 
-  parts.push(new Text(`${q.question}\n`));
+  parts.push(new Text(`${q.question}\n`).setColor("white"));
 
   for (const ans of q.answers) {
+    const feedbackCommand = ans.correct
+      ? correct
+      : incorrect;
+
     parts.push(
-      new Text(`${ans.text}\n`)
-      .setColor(ans.color ?? "white")
-      .setClick(click.command(
-        new SayNode("hi")
-      ))
+      new Text(`[${ans.text}] \n`)
+        .setColor(ans.color ?? "white")
+        .setClick(click.command(feedbackCommand.node))
+        .setHover(hover.text(new Text("Click to answer!").setColor("gray"))),
     );
   }
 
   return new TellrawText(parts);
 }
 
-const PREFIX = "[Trivia]";
+function buildCorrectMessage(): TellrawText {
+  return new TellrawText([
+    new Text("[Trivia] ").setColor("gold"),
+    new Text("✔ Correct! Well done!").setColor("green"),
+  ]);
+}
+
+function buildIncorrectMessage(): TellrawText {
+  return new TellrawText([
+    new Text("[Trivia] ").setColor("gold"),
+    new Text("✘ Wrong answer. Better luck next time!").setColor("red"),
+  ]);
+}
+
+
+const questionRefs = questions.map((q, i) => {
+  const fn = dataPack.createFunction(`question_${i}`);
+  fn.build((ctx) => {
+    ctx.tellraw("@a", buildQuestionMessage(q));
+  });
+  return fn;
+});
+
+
+
+
+export const question = dataPack.createFunction("question");
 question.build((ctx) => {
-  ctx.say("QUESTION");
+  const trivia = dataPack.objective("trivia");
+  const rng = trivia.score("rng");
 
-  const q1: TriviaQuestion = {
-    prefix: PREFIX,
-    question: "What is 2 + 2?",
-    answers: [
-      { text: "1", color: "red" },
-      { text: "2", color: "blue" },
-      { text: "4", color: "green" },
-      { text: "5", color: "yellow" },
-    ],
-  };
+  rng.storeResult(ctx, new RandomValueNode(1, questions.length));
 
-  const q2: TriviaQuestion = {
-    prefix: PREFIX,
-    question: "What is 2 + 3?",
-    answers: [
-      { text: "1", color: "red" },
-      { text: "2", color: "blue" },
-      { text: "4", color: "green" },
-      { text: "5", color: "yellow" },
-    ],
-  };
+  const [first, ...rest] = questionRefs;
 
-  ctx.tellraw("@a", buildQuestionMessage(q1));
-  ctx.tellraw("@a", buildQuestionMessage(q2));
+  let chain = ctx.if(rng.equal(1), (ctx) => {
+    ctx.call(first);
+  });
+
+  rest.forEach((ref, i) => {
+    chain = chain.elif(rng.equal(i + 2), (ctx) => {
+      ctx.call(ref);
+    });
+  });
 });
