@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../../mc-datapack-compiler"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
