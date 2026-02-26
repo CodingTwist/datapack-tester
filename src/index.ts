@@ -1,8 +1,14 @@
+import { config } from "./config";
 import { dataPack } from "./datapack";
 
-import "./load"
+export * from "./load";
+export * from "./types";
+export * from "./feedback";
+export * from "./questions";
+export * from "./randomQuestion";
 
-const OUTPUT_PATH = "/home/sam/.local/share/PrismLauncher/instances/Fabulously Optimized(3)/.minecraft/saves/Datapack Testing (1)/datapacks/TSTrivia_datapack";
+
+const OUTPUT_PATH = config.output;
 
 dataPack.writeDatapack(OUTPUT_PATH);
 
