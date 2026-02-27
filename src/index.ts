@@ -1,10 +1,14 @@
 import { config } from "./config";
 import { dataPack } from "./datapack";
 
+export const PREFIX = "[Trivia]";
+
+
+export * from "./questions";
+
 export * from "./load";
 export * from "./types";
 export * from "./feedback";
-export * from "./questions";
 export * from "./randomQuestion";
 
 

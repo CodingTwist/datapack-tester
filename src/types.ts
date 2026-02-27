@@ -1,11 +1,19 @@
-export interface TriviaAnswer {
-  text: string;
-  color?: string;
-  correct: boolean;
-}
+export type TriviaMeta = {
+  title: string;
+  defaultPrefix: string;
+  version: number;
+};
 
-export interface TriviaQuestion {
-  prefix?: string;
+export type TriviaQuestion = {
+  id: string;
+  category: string;
+  difficulty: string;
   question: string;
-  answers: TriviaAnswer[];
-}
+  options: string[];
+  correctIndex: number;
+};
+
+export type TriviaFile = {
+  meta: TriviaMeta;
+  questions: TriviaQuestion[];
+};

@@ -2,11 +2,14 @@ import * as fs from "fs";
 import * as path from "path";
 import { dataPack } from "./datapack";
 import { buildQuestionMessage } from "./messages";
-import { TriviaQuestion } from "./types";
+import { TriviaFile } from "./types";
 
-export const questions: TriviaQuestion[] = JSON.parse(
+const trivia: TriviaFile = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, "../questions.json"), "utf-8"),
 );
+
+export const meta = trivia.meta;
+export const questions = trivia.questions;
 
 export const questionFunctions = questions.map((q, i) => {
   const fn = dataPack.createFunction(`question_${i}`);

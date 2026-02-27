@@ -1,202 +1,167 @@
-[
-  {
-    "prefix": "[Trivia]",
-    "question": "What is 2 + 2?",
-    "answers": [
-      { "text": "3", "color": "red",    "correct": false },
-      { "text": "4", "color": "green",  "correct": true  },
-      { "text": "5", "color": "blue",   "correct": false },
-      { "text": "6", "color": "yellow", "correct": false }
-    ]
+{
+  "meta": {
+    "version": 1
   },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the capital of France?",
-    "answers": [
-      { "text": "London", "color": "red",    "correct": false },
-      { "text": "Berlin", "color": "blue",   "correct": false },
-      { "text": "Paris",  "color": "green",  "correct": true  },
-      { "text": "Madrid", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "How many sides does a hexagon have?",
-    "answers": [
-      { "text": "5", "color": "red",    "correct": false },
-      { "text": "6", "color": "green",  "correct": true  },
-      { "text": "7", "color": "blue",   "correct": false },
-      { "text": "8", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What planet is closest to the Sun?",
-    "answers": [
-      { "text": "Venus",   "color": "red",    "correct": false },
-      { "text": "Earth",   "color": "blue",   "correct": false },
-      { "text": "Mercury", "color": "green",  "correct": true  },
-      { "text": "Mars",    "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the largest ocean on Earth?",
-    "answers": [
-      { "text": "Atlantic", "color": "red",    "correct": false },
-      { "text": "Indian",   "color": "blue",   "correct": false },
-      { "text": "Arctic",   "color": "yellow", "correct": false },
-      { "text": "Pacific",  "color": "green",  "correct": true  }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "Who wrote Romeo and Juliet?",
-    "answers": [
-      { "text": "Dickens",     "color": "red",    "correct": false },
-      { "text": "Shakespeare", "color": "green",  "correct": true  },
-      { "text": "Austen",      "color": "blue",   "correct": false },
-      { "text": "Tolkien",     "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the chemical symbol for gold?",
-    "answers": [
-      { "text": "Go", "color": "red",    "correct": false },
-      { "text": "Gd", "color": "blue",   "correct": false },
-      { "text": "Au", "color": "green",  "correct": true  },
-      { "text": "Ag", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "How many players are on a standard football team?",
-    "answers": [
-      { "text": "9",  "color": "red",    "correct": false },
-      { "text": "10", "color": "blue",   "correct": false },
-      { "text": "11", "color": "green",  "correct": true  },
-      { "text": "12", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the fastest land animal?",
-    "answers": [
-      { "text": "Lion",     "color": "red",    "correct": false },
-      { "text": "Cheetah",  "color": "green",  "correct": true  },
-      { "text": "Horse",    "color": "blue",   "correct": false },
-      { "text": "Kangaroo", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What year did the Titanic sink?",
-    "answers": [
-      { "text": "1905", "color": "red",    "correct": false },
-      { "text": "1912", "color": "green",  "correct": true  },
-      { "text": "1918", "color": "blue",   "correct": false },
-      { "text": "1923", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the hardest natural substance on Earth?",
-    "answers": [
-      { "text": "Gold",     "color": "red",    "correct": false },
-      { "text": "Iron",     "color": "blue",   "correct": false },
-      { "text": "Obsidian", "color": "yellow", "correct": false },
-      { "text": "Diamond",  "color": "green",  "correct": true  }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "How many continents are there?",
-    "answers": [
-      { "text": "5", "color": "red",    "correct": false },
-      { "text": "6", "color": "blue",   "correct": false },
-      { "text": "7", "color": "green",  "correct": true  },
-      { "text": "8", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What gas do plants absorb from the atmosphere?",
-    "answers": [
-      { "text": "Oxygen",         "color": "red",    "correct": false },
-      { "text": "Nitrogen",       "color": "blue",   "correct": false },
-      { "text": "Carbon Dioxide", "color": "green",  "correct": true  },
-      { "text": "Hydrogen",       "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the largest planet in our solar system?",
-    "answers": [
-      { "text": "Saturn",  "color": "red",    "correct": false },
-      { "text": "Jupiter", "color": "green",  "correct": true  },
-      { "text": "Uranus",  "color": "blue",   "correct": false },
-      { "text": "Neptune", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "In Minecraft, what do you need to make a bed?",
-    "answers": [
-      { "text": "Wood + Iron",    "color": "red",    "correct": false },
-      { "text": "Wool + Planks",  "color": "green",  "correct": true  },
-      { "text": "Wool + Stone",   "color": "blue",   "correct": false },
-      { "text": "Silk + Planks",  "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the square root of 144?",
-    "answers": [
-      { "text": "10", "color": "red",    "correct": false },
-      { "text": "11", "color": "blue",   "correct": false },
-      { "text": "12", "color": "green",  "correct": true  },
-      { "text": "14", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What language is primarily spoken in Brazil?",
-    "answers": [
-      { "text": "Spanish",    "color": "red",    "correct": false },
-      { "text": "Portuguese", "color": "green",  "correct": true  },
-      { "text": "French",     "color": "blue",   "correct": false },
-      { "text": "English",    "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "How many bones are in the adult human body?",
-    "answers": [
-      { "text": "186", "color": "red",    "correct": false },
-      { "text": "196", "color": "blue",   "correct": false },
-      { "text": "206", "color": "green",  "correct": true  },
-      { "text": "216", "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the most spoken language in the world?",
-    "answers": [
-      { "text": "English",  "color": "red",    "correct": false },
-      { "text": "Spanish",  "color": "blue",   "correct": false },
-      { "text": "Mandarin", "color": "green",  "correct": true  },
-      { "text": "Hindi",    "color": "yellow", "correct": false }
-    ]
-  },
-  {
-    "prefix": "[Trivia]",
-    "question": "What is the smallest country in the world?",
-    "answers": [
-      { "text": "Monaco",        "color": "red",    "correct": false },
-      { "text": "San Marino",    "color": "blue",   "correct": false },
-      { "text": "Vatican City",  "color": "green",  "correct": true  },
-      { "text": "Liechtenstein", "color": "yellow", "correct": false }
-    ]
-  }
-]
+  "questions": [
+    {
+      "id": "math_001",
+      "category": "math",
+      "difficulty": "easy",
+      "question": "What is 2 + 2?",
+      "options": ["3", "4", "5", "6"],
+      "correctIndex": 1
+    },
+    {
+      "id": "geo_001",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What is the capital of France?",
+      "options": ["London", "Berlin", "Paris", "Madrid"],
+      "correctIndex": 2
+    },
+    {
+      "id": "math_002",
+      "category": "math",
+      "difficulty": "easy",
+      "question": "What is the square root of 144?",
+      "options": ["10", "11", "12", "14"],
+      "correctIndex": 2
+    },
+    {
+      "id": "science_001",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What planet is closest to the Sun?",
+      "options": ["Venus", "Earth", "Mercury", "Mars"],
+      "correctIndex": 2
+    },
+    {
+      "id": "science_002",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the chemical symbol for gold?",
+      "options": ["Go", "Gd", "Au", "Ag"],
+      "correctIndex": 2
+    },
+    {
+      "id": "geo_002",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What is the largest ocean on Earth?",
+      "options": ["Atlantic", "Indian", "Arctic", "Pacific"],
+      "correctIndex": 3
+    },
+    {
+      "id": "lit_001",
+      "category": "literature",
+      "difficulty": "easy",
+      "question": "Who wrote Romeo and Juliet?",
+      "options": ["Dickens", "Shakespeare", "Austen", "Tolkien"],
+      "correctIndex": 1
+    },
+    {
+      "id": "sports_001",
+      "category": "sports",
+      "difficulty": "easy",
+      "question": "How many players are on a standard football team?",
+      "options": ["9", "10", "11", "12"],
+      "correctIndex": 2
+    },
+    {
+      "id": "science_003",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the fastest land animal?",
+      "options": ["Lion", "Cheetah", "Horse", "Kangaroo"],
+      "correctIndex": 1
+    },
+    {
+      "id": "history_001",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "What year did the Titanic sink?",
+      "options": ["1905", "1912", "1918", "1923"],
+      "correctIndex": 1
+    },
+    {
+      "id": "science_004",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the hardest natural substance on Earth?",
+      "options": ["Gold", "Iron", "Obsidian", "Diamond"],
+      "correctIndex": 3
+    },
+    {
+      "id": "geo_003",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "How many continents are there?",
+      "options": ["5", "6", "7", "8"],
+      "correctIndex": 2
+    },
+    {
+      "id": "science_005",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What gas do plants absorb from the atmosphere?",
+      "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+      "correctIndex": 2
+    },
+    {
+      "id": "science_006",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "What is the largest planet in our solar system?",
+      "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+      "correctIndex": 1
+    },
+    {
+      "id": "mc_001",
+      "category": "minecraft",
+      "difficulty": "easy",
+      "question": "In Minecraft, what do you need to make a bed?",
+      "options": ["Wood + Iron", "Wool + Planks", "Wool + Stone", "Silk + Planks"],
+      "correctIndex": 1
+    },
+    {
+      "id": "geo_004",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What language is primarily spoken in Brazil?",
+      "options": ["Spanish", "Portuguese", "French", "English"],
+      "correctIndex": 1
+    },
+    {
+      "id": "science_007",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "How many bones are in the adult human body?",
+      "options": ["186", "196", "206", "216"],
+      "correctIndex": 2
+    },
+    {
+      "id": "geo_005",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What is the most spoken language in the world?",
+      "options": ["English", "Spanish", "Mandarin", "Hindi"],
+      "correctIndex": 2
+    },
+    {
+      "id": "geo_006",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "What is the smallest country in the world?",
+      "options": ["Monaco", "San Marino", "Vatican City", "Liechtenstein"],
+      "correctIndex": 2
+    },
+    {
+      "id": "math_003",
+      "category": "math",
+      "difficulty": "easy",
+      "question": "How many sides does a hexagon have?",
+      "options": ["5", "6", "7", "8"],
+      "correctIndex": 1
+    }
+  ]
+}
