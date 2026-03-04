@@ -1,8 +1,8 @@
-import { TellrawText, Text, click, hover } from "mc-datapack-compiler";
+import { TellrawText, Text, TriggerNode, click, hover } from "mc-datapack-compiler";
 import { TriviaQuestion } from "./types";
 import { correct, incorrect } from "./feedback";
 import { meta } from "./questions";
-import { PREFIX } from ".";
+import { correctObj, PREFIX } from ".";
 
 export function buildQuestionMessage(q: TriviaQuestion): TellrawText {
   const parts: Text[] = [];
@@ -23,14 +23,14 @@ function buildAnswerText(
   correctIndex: number,
 ): Text {
   const isCorrect = index === correctIndex;
-  const feedbackCommand = isCorrect ? correct : incorrect;
+  const feedbackCommand = isCorrect ? new TriggerNode(correctObj, 1) : new TriggerNode(correctObj, 2);
 
   const colorMap = ["red", "green", "blue", "yellow"];
   const color = colorMap[index] ?? "white";
 
   return new Text(`[${option}] \n`)
     .setColor(color)
-    .setClick(click.command(feedbackCommand.node))
+    .setClick(click.command(feedbackCommand))
     .setHover(hover.text(new Text("Click to answer!").setColor("gray")));
 }
 

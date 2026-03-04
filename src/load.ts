@@ -2,8 +2,10 @@ import { RandomValueNode, TellrawText, Text } from "mc-datapack-compiler";
 import { dataPack } from "./datapack";
 import { question } from "./randomQuestion";
 import { Selector } from "mc-datapack-compiler/dist/core/frontend/nodes/selector";
+import { correctObj } from ".";
 
 const DEFAULT_TIME = 500;
+
 
 export const load = dataPack.createFunction("load");
 load.build((ctx) => {
@@ -12,6 +14,7 @@ load.build((ctx) => {
     new TellrawText([
       new Text("[TSTrivia] ").setColor("gold"),
       new Text("Successfully loaded!").setColor("green"),
+      new Text("\n").setColor("white")
     ]),
   );
 
@@ -22,8 +25,7 @@ load.build((ctx) => {
 
   timer.copy(ctx, time);
 
-  const correct = dataPack.objective("correct");
-  ctx.scoreEnable(Selector.allPlayers(), correct);
+  ctx.scoreEnable(Selector.allPlayers(), correctObj);
 
   ctx.call(question);
 });

@@ -3,6 +3,7 @@ import { dataPack } from "./datapack";
 import { questions } from "./questions";
 import { buildQuestionMessage } from "./messages";
 import { Selector } from "mc-datapack-compiler/dist/core/frontend/nodes/selector";
+import { correctObj } from ".";
 
 export const question = dataPack.createFunction("question");
 
@@ -19,4 +20,7 @@ question.build((ctx) => {
       ctx.tellraw(Selector.allPlayers(), buildQuestionMessage(q));
     });
   });
+
+  ctx.scoreEnable(Selector.allPlayers(), correctObj);
+
 });
