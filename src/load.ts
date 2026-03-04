@@ -20,8 +20,10 @@ load.build((ctx) => {
   const timer = trivia.score("timer").set(0, ctx);
   const time = trivia.score("time").set(DEFAULT_TIME, ctx);
 
-  rng.storeResult(ctx, new RandomValueNode(1, 18));
   timer.copy(ctx, time);
+
+  const correct = dataPack.objective("correct");
+  ctx.scoreEnable(Selector.allPlayers(), correct);
 
   ctx.call(question);
 });
