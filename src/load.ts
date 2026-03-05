@@ -6,6 +6,7 @@ import { correctObj } from ".";
 
 const DEFAULT_TIME = 500;
 
+export const triviaObj = dataPack.objective("trivia");
 
 export const load = dataPack.createFunction("load");
 load.build((ctx) => {
@@ -18,10 +19,9 @@ load.build((ctx) => {
     ]),
   );
 
-  const trivia = dataPack.objective("trivia");
-  const rng = trivia.score("rng").set(0, ctx);
-  const timer = trivia.score("timer").set(0, ctx);
-  const time = trivia.score("time").set(DEFAULT_TIME, ctx);
+  const rng = triviaObj.score("rng").set(0, ctx);
+  const timer = triviaObj.score("timer").set(0, ctx);
+  const time = triviaObj.score("time").set(DEFAULT_TIME, ctx);
 
   timer.copy(ctx, time);
 

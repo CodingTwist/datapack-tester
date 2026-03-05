@@ -3,12 +3,12 @@ import { dataPack } from "./datapack";
 import { questions } from "./questions";
 import { buildQuestionMessage } from "./messages";
 import { Selector } from "mc-datapack-compiler/dist/core/frontend/nodes/selector";
-import { correctObj } from ".";
+import { correctObj, triviaObj } from ".";
 
 export const question = dataPack.createFunction("question");
 
 question.build((ctx) => {
-  const rng = dataPack.objective("trivia").score("rng");
+  const rng = triviaObj.score("rng");
   rng.storeResult(ctx, new RandomValueNode(1, questions.length));
 
   let chain = ctx.if(rng.equal(1), (ctx) => {

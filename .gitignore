@@ -1,5 +1,5 @@
 dist/*
 node_modules/*
-out/*
 package-lock.json
 .env
+mc-datapack-compiler.code-workspace

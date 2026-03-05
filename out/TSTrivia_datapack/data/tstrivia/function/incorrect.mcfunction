@@ -1,0 +1,1 @@
+tellraw @a [{"text":"[Trivia] ","color":"gold"},{"text":"✘ Wrong answer. Better luck next time!","color":"red"}]

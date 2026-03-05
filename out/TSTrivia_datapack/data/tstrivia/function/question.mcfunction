@@ -1,0 +1,22 @@
+execute store result score rng trivia run random value 1..20
+execute if score rng trivia matches 1..1 run function tstrivia:__internal_question_if_0
+execute if score rng trivia matches 2..2 run function tstrivia:__internal_question_elif_0
+execute if score rng trivia matches 3..3 run function tstrivia:__internal_question_elif_1
+execute if score rng trivia matches 4..4 run function tstrivia:__internal_question_elif_2
+execute if score rng trivia matches 5..5 run function tstrivia:__internal_question_elif_3
+execute if score rng trivia matches 6..6 run function tstrivia:__internal_question_elif_4
+execute if score rng trivia matches 7..7 run function tstrivia:__internal_question_elif_5
+execute if score rng trivia matches 8..8 run function tstrivia:__internal_question_elif_6
+execute if score rng trivia matches 9..9 run function tstrivia:__internal_question_elif_7
+execute if score rng trivia matches 10..10 run function tstrivia:__internal_question_elif_8
+execute if score rng trivia matches 11..11 run function tstrivia:__internal_question_elif_9
+execute if score rng trivia matches 12..12 run function tstrivia:__internal_question_elif_10
+execute if score rng trivia matches 13..13 run function tstrivia:__internal_question_elif_11
+execute if score rng trivia matches 14..14 run function tstrivia:__internal_question_elif_12
+execute if score rng trivia matches 15..15 run function tstrivia:__internal_question_elif_13
+execute if score rng trivia matches 16..16 run function tstrivia:__internal_question_elif_14
+execute if score rng trivia matches 17..17 run function tstrivia:__internal_question_elif_15
+execute if score rng trivia matches 18..18 run function tstrivia:__internal_question_elif_16
+execute if score rng trivia matches 19..19 run function tstrivia:__internal_question_elif_17
+execute if score rng trivia matches 20..20 run function tstrivia:__internal_question_elif_18
+scoreboard players enable @a correct
