@@ -25,7 +25,7 @@ function buildAnswerText(
   const isCorrect = index === correctIndex;
   const feedbackCommand = isCorrect ? new TriggerNode(correctObj, 1) : new TriggerNode(correctObj, 2);
 
-  const colorMap = ["red", "green", "blue", "yellow"];
+  const colorMap = ["red", "green", "blue", "yellow", "pink"];
   const color = colorMap[index] ?? "white";
 
   return new Text(`[${option}] \n`)
