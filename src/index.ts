@@ -1,13 +1,13 @@
 import { config } from "./config";
 import { dataPack } from "./datapack";
 
-export const DATAPACK_NAME = "TSTrivia";
 export const PREFIX = "[Trivia]";
 
 export const correctObj = dataPack.objective("correct", "trigger");
+export const triviaObj = dataPack.objective("trivia");
 
-export * from "./questions";
 export * from "./load";
+export * from "./questions";
 export * from "./types";
 export * from "./randomQuestion";
 export * from "./tick"

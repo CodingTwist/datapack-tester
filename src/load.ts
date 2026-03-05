@@ -2,12 +2,9 @@ import { RandomValueNode, TellrawText, Text } from "mc-datapack-compiler";
 import { dataPack } from "./datapack";
 import { question } from "./randomQuestion";
 import { Selector } from "mc-datapack-compiler/dist/core/frontend/nodes/selector";
-import { correctObj } from ".";
+import { correctObj, triviaObj } from ".";
 
 const DEFAULT_TIME = 500;
-
-export const triviaObj = dataPack.objective("trivia");
-
 export const load = dataPack.createFunction("load");
 load.build((ctx) => {
   ctx.tellraw(
