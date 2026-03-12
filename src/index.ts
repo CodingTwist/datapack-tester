@@ -14,9 +14,6 @@ export * from "./tick"
 
 const OUTPUT_PATH = config.output;
 
-// const viewer = new DatapackViewer();
-// viewer.write(dataPack, "ast.html");
-
 dataPack.writeDatapack(OUTPUT_PATH);
 
 export { dataPack };
